@@ -10,9 +10,9 @@ Download the model checkpoints and fastMRI metadata from: https://drive.google.c
 - **algorithms**: algorithms for solving inverse problems
 - **configs**: yaml config files for running experiments
 - **datasets**: PyTorch dataset classes
-- **metalearners**: the main control classes for gradient-based meta-learning
+- **learners**: the main control classes for gradient-based meta-learning
 - **problems**: defines forward operators as classes for re-usability
-- **utils_new**: useful functions for experiment logging, metrics, and losses
+- **utils**: useful functions for experiment logging, metrics, and losses
 - ```main.py```: program to invoke for running meta-learning from command line
 
 ## How to run
