@@ -1,5 +1,5 @@
-# Inverse-Meta
-Optimizing Sampling Patterns for Compressed Sensing MRI with Diffusion Generative Models
+# MRI_Sampling_Diffusion
+Code for "Optimizing Sampling Patterns for Compressed Sensing MRI with Diffusion Generative Models"
 
 ## Setup
 First, set up a Conda environment using ```conda env create -f conda_env.yml```.
