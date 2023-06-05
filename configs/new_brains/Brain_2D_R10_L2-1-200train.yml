@@ -1,0 +1,66 @@
+use_gpu: True
+gpu_num: 0 #-1 means use all (DP mode)
+
+verbose: true
+debug: false #true won't save anything
+save_imgs: true
+save_dir: "/csiNAS2/slow/sriram/NeurIPS_experiments" #root of folder to save run information
+
+seed: 2023
+
+net:
+ model: 'dps'
+ config_dir: "/home/sravula/meta_exp/network-snapshot-008040.pkl"
+ training_step_size: 1.0
+ likelihood_step_size: 10.0
+ steps: 100
+ S_churn: 0
+
+data:
+ dataset: 'Brain-Multicoil'
+
+ train_input_dir: '/csiNAS/brett/sites_new/Training/site5/ksp'
+ train_maps_dir: '/csiNAS/brett/sites_new/Training/site5/maps'
+ test_input_dir: '/csiNAS/brett/sites_new/Validation/site5/ksp'
+ test_maps_dir: '/csiNAS/brett/sites_new/Validation/site5/maps'
+
+ train_num_slices_path: '/home/sravula/meta_exp/brain_site5_train_numslices.npy'
+ train_slice_mapper_path: '/home/sravula/meta_exp/brain_site5_train_slicemapper.npy'
+ test_num_slices_path: '/home/sravula/meta_exp/brain_site5_test_numslices.npy'
+ test_slice_mapper_path: '/home/sravula/meta_exp/brain_site5_test_slicemapper.npy'
+
+ load_slice_info: true
+ save_slice_info: false
+
+ centered: True
+
+ num_train: 200
+ num_val:   50
+ num_test:  100
+
+ train_batch_size: 1
+ val_batch_size:   10
+ test_batch_size:  10
+
+ image_size: 384
+ num_channels: 2
+
+mask:
+ meta_loss_type: 'l2' #["l2"]
+
+ sample_pattern: "vertical"
+ R: 10
+ tau: 1.0
+ num_acs_lines: 16
+ mask_init: "uniform"
+
+opt:
+  num_iters: 10 #number of meta iterations to run
+  optimizer: 'adam' #[adam, sgd]
+  lr: 0.01 #meta learning rate
+
+  decay: false
+  lr_decay: 0.95 #exponential weight decay rate.
+
+  val_iters: 1 #validate every n iterations
+  checkpoint_iters: 1 #checkpoint every n iterations
