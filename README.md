@@ -1,5 +1,5 @@
-# MRI_Sampling_Diffusion
-Code for "Optimizing Sampling Patterns for Compressed Sensing MRI with Diffusion Generative Models". Our pre-print can be found at https://arxiv.org/abs/2306.03284
+# Optimizing Sampling Patterns for Compressed Sensing MRI with Diffusion Generative Models
+Code for "Optimizing Sampling Patterns for Compressed Sensing MRI with Diffusion Generative Models". Our pre-print can be found at https://arxiv.org/abs/2306.03284.
 
 ## Setup
 First, set up a Conda environment using ```conda env create -f conda_env.yml```.
